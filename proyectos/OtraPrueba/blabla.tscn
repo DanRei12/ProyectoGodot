@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ColorRect.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.160784, 0.0470588, 0.0470588, 1 )
+
+[node name="Panel" type="Panel"]
+margin_right = 227.0
+margin_bottom = 184.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 57.0
+margin_top = 31.0
+margin_right = 170.0
+margin_bottom = 45.0
+text = "Presione el botón"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 70.0
+margin_top = 71.0
+margin_right = 157.0
+margin_bottom = 122.0
+
+[node name="ColorRect" type="ColorRect" parent="TextureButton"]
+margin_left = -1.0
+margin_right = 88.0
+margin_bottom = 51.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 73.0
+margin_top = 74.0
+margin_right = 154.0
+margin_bottom = 118.0
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="hide" from="TextureButton/ColorRect" to="TextureButton/ColorRect" method="_on_ColorRect_hide"]
+[connection signal="mouse_entered" from="TextureButton/ColorRect" to="TextureButton/ColorRect" method="_on_ColorRect_mouse_entered"]
